@@ -1,26 +1,44 @@
-# Ember-frost-profit
+# ember-frost-profit
 
-This README outlines the details of collaborating on this Ember addon.
+This project aims to fill in the gaps in Ember and takes concepts from other popular JavaScript frameworks.
 
 ## Installation
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+```
+ember install ember-frost-profit
+```
 
-## Running
+# Usage
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+## Better Components
 
-## Running Tests
+Below is an example of a component that extends the *profitable* component from this addon:
 
-* `npm test` (Runs `ember try:testall` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
+```
+import ProfitableComponent from 'ember-frost-profit/components/profit'
 
-## Building
+export default ProfitableComponent.extend({
+  propTypes: {
+    foo: PropTypes.string,
+    bar: PropTypes.number.isRequired,
+    baz: PropTypes.oneOf([
+      PropTypes.bool,
+      PropTypes.string
+    ])
+  },
 
-* `ember build`
+  getDefaultProps () {
+    return {
+      foo: 'This is going to be highly profitable'
+    }
+  }
+})
+```
 
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
+### Property Validation
+
+The idea of *propTypes* comes from the world of React and is implemented to have an almost identical API in the Ember world. More documentation on this will be coming soon but for now you can reference the above example.
+
+### Default Property Values
+
+In Ember you can set default property values on a component class itself but sometimes this bites you when you end up with a property containing an array of selected items or a state object, where all instances of the component end up sharing that same array or object. Uncovering this issue is not always an easy task and so *getDefaultProps* was also implemented (thanks to the React team for this concept as well).
