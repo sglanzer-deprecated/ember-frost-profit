@@ -15,7 +15,7 @@ ember install ember-frost-profit
 Below is an example of a component that extends the *profitable* component from this addon:
 
 ```js
-import ProfitableComponent from 'ember-frost-profit/components/profit'
+import ProfitableComponent, {PropTypes} from 'ember-frost-profit/components/profitable'
 
 export default ProfitableComponent.extend({
   propTypes: {

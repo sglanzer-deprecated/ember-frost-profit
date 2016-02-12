@@ -1,6 +1,6 @@
 import _ from 'lodash'
 import Ember from 'ember'
-import {validators} from '../utils/prop-types'
+import PropTypes, {validators} from '../utils/prop-types'
 
 const helpers = {
   /* eslint-disable complexity */
@@ -69,4 +69,4 @@ export default Ember.Component.extend({
   }
 })
 
-export {helpers}
+export {helpers, PropTypes}
