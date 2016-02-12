@@ -4,7 +4,7 @@ This project aims to fill in the gaps in Ember and takes concepts from other pop
 
 ## Installation
 
-```
+```bash
 ember install ember-frost-profit
 ```
 
@@ -14,7 +14,7 @@ ember install ember-frost-profit
 
 Below is an example of a component that extends the *profitable* component from this addon:
 
-```
+```js
 import ProfitableComponent from 'ember-frost-profit/components/profit'
 
 export default ProfitableComponent.extend({
